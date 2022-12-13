@@ -1,7 +1,6 @@
 package com.zhoupeng.common.config;
 
 import com.zhoupeng.common.domain.SwaggerProperties;
-import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -19,13 +18,18 @@ import java.util.List;
  */
 public abstract class BaseSwaggerConfig {
 
-    @Bean
-    public Docket createRestApi() {
+    /**
+     * 自定义Swagger配置
+     */
+    protected abstract SwaggerProperties swaggerProperties();
+
+    protected Docket getDocket(String groupName, String basePackage) {
         SwaggerProperties swaggerProperties = swaggerProperties();
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo(swaggerProperties))
+                .groupName(groupName)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getApiBasePackage()))
+                .apis(RequestHandlerSelectors.basePackage(basePackage))
                 .paths(PathSelectors.any())
                 .build();
         if (swaggerProperties.isEnableSecurity()) {
@@ -34,16 +38,18 @@ public abstract class BaseSwaggerConfig {
         return docket;
     }
 
-    private ApiInfo apiInfo(SwaggerProperties swaggerProperties) {
+
+    protected ApiInfo apiInfo(SwaggerProperties swaggerProperties) {
         return new ApiInfoBuilder()
                 .title(swaggerProperties.getTitle())
                 .description(swaggerProperties.getDescription())
                 .contact(new Contact(swaggerProperties.getContactName(), swaggerProperties.getContactUrl(), swaggerProperties.getContactEmail()))
                 .version(swaggerProperties.getVersion())
+                .termsOfServiceUrl("麻豆传媒")
                 .build();
     }
 
-    private List<SecurityScheme> securitySchemes() {
+    protected List<SecurityScheme> securitySchemes() {
         //设置请求头信息
         List<SecurityScheme> result = new ArrayList<>();
         ApiKey apiKey = new ApiKey("Authorization", "Authorization", "header");
@@ -51,21 +57,21 @@ public abstract class BaseSwaggerConfig {
         return result;
     }
 
-    private List<SecurityContext> securityContexts() {
+    protected List<SecurityContext> securityContexts() {
         //设置需要登录认证的路径
         List<SecurityContext> result = new ArrayList<>();
         result.add(getContextByPath("/*/.*"));
         return result;
     }
 
-    private SecurityContext getContextByPath(String pathRegex) {
+    protected SecurityContext getContextByPath(String pathRegex) {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
                 .forPaths(PathSelectors.regex(pathRegex))
                 .build();
     }
 
-    private List<SecurityReference> defaultAuth() {
+    protected List<SecurityReference> defaultAuth() {
         List<SecurityReference> result = new ArrayList<>();
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
@@ -74,8 +80,4 @@ public abstract class BaseSwaggerConfig {
         return result;
     }
 
-    /**
-     * 自定义Swagger配置
-     */
-    public abstract SwaggerProperties swaggerProperties();
 }

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping;
+import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.spring.web.plugins.WebFluxRequestHandlerProvider;
 import springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -27,13 +28,25 @@ public class SwaggerConfig extends BaseSwaggerConfig {
     @Override
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
-                .apiBasePackage("com.zhoupeng.modules")
-                .title("mall-tiny项目骨架")
-                .description("mall-tiny项目骨架相关接口文档")
-                .contactName("macro")
+                .title("manage项目")
+                .description("manage项目相关接口文档")
+                .contactName("paris")
+                .contactUrl("www.github.com")
+                .contactEmail("17688893445@163.com")
                 .version("1.0")
                 .enableSecurity(true)
                 .build();
+    }
+
+    @Bean
+    public Docket createUmsApi() {
+        return getDocket("用户和系统管理", "com.zhoupeng.modules.ums");
+    }
+
+
+    @Bean
+    public Docket createOrderApi() {
+        return getDocket("订单管理", "com.zhoupeng.modules.order");
     }
 
     @Bean

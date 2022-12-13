@@ -12,10 +12,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @Builder
 public class SwaggerProperties {
-    /**
-     * API文档生成基础路径
-     */
-    private String apiBasePackage;
+
     /**
      * 是否要启用登录认证
      */
