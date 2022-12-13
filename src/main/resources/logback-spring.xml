@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_PATH" value="manage-logs"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [%15.15(%thread)] %cyan(%-40.40(%logger{40})) : %highlight(%msg) %n
+            </pattern>
+<!--            <charset>UTF-8</charset>-->
+        </encoder>
+    </appender>
+    <!-- debug 日志-->
+    <appender name="server_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/project_server/project_server.log</File>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>.${LOG_PATH}/project_server/project_server.%d.%i.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+            <maxFileSize>10MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level --- [%15.15(%thread)] %-40.40(%logger{40}) : %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- info 日志-->
+    <appender name="info_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/project_info/project_info.log</File>
+        <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>info</level>
+            <onMatch>NEUTRAL</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/project_info/project_info.%d.%i.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+            <maxFileSize>10MB</maxFileSize>
+        </rollingPolicy>
+        <!--编码器-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level --- [%15.15(%thread)] %-40.40(%logger{40}) : %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- error 日志-->
+    <appender name="error_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/project_error/project_error.log</File>
+        <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/project_error/project_error.%d.%i.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+            <maxFileSize>10MB</maxFileSize>
+        </rollingPolicy>
+        <!--编码器-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level --- [%15.15(%thread)] %-40.40(%logger{40}) : %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"></appender-ref>
+        <appender-ref ref="error_log"></appender-ref>
+        <appender-ref ref="info_log"></appender-ref>
+        <appender-ref ref="server_log"></appender-ref>
+    </root>
+    <logger name="com.zhoupeng" level="debug" additivity="false">
+        <appender-ref ref="STDOUT"></appender-ref>
+        <appender-ref ref="error_log"></appender-ref>
+        <appender-ref ref="info_log"></appender-ref>
+        <appender-ref ref="server_log"></appender-ref>
+    </logger>
+</configuration>
