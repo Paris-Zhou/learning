@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 
 /**
  * 用户登录参数
- * Created by Paris_Zhou on 2018/4/26.
+ * Created by Paris_Zhou on 2022/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

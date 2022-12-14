@@ -16,7 +16,7 @@ import java.util.Date;
 
 /**
  * 后台资源管理Service实现类
- * Created by Paris_Zhou on 2020/2/2.
+ * Created by Paris_Zhou on 2022/2/2.
  */
 @Service
 public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsResource>implements UmsResourceService {

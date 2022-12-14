@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
 import com.zhoupeng.common.service.RedisService;
 import com.zhoupeng.common.service.impl.RedisServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
@@ -19,11 +18,10 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
-import java.util.ArrayList;
 
 /**
  * Redis基础配置
- * Created by Paris_Zhou on 2020/6/19.
+ * Created by Paris_Zhou on 2022/6/19.
  */
 public class BaseRedisConfig {
 

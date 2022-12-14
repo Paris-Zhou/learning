@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 用于配置白名单资源路径
- * Created by Paris_Zhou on 2018/11/5.
+ * Created by Paris_Zhou on 2022/11/5.
  */
 @Getter
 @Setter

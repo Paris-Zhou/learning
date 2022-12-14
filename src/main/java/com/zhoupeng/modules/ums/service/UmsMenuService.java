@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 后台菜单管理Service
- * Created by Paris_Zhou on 2020/2/2.
+ * Created by Paris_Zhou on 2022/2/2.
  */
 public interface UmsMenuService extends IService<UmsMenu> {
     /**

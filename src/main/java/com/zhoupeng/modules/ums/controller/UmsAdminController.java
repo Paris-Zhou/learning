@@ -22,12 +22,14 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
  * 后台用户管理
- * Created by Paris_Zhou on 2018/4/26.
+ * Created by Paris_Zhou on 2022/4/26.
  */
 @Controller
 @Api(tags = "UmsAdminController")

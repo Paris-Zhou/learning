@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * 动态权限相关业务类
- * Created by Paris_Zhou on 2020/2/7.
+ * Created by Paris_Zhou on 2022/2/7.
  */
 public interface DynamicSecurityService {
     /**

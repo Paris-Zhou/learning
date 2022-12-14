@@ -5,11 +5,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhoupeng.modules.ums.model.UmsResource;
 
-import java.util.List;
-
 /**
  * 后台资源管理Service
- * Created by Paris_Zhou on 2020/2/2.
+ * Created by Paris_Zhou on 2022/2/2.
  */
 public interface UmsResourceService extends IService<UmsResource> {
     /**

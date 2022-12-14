@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 后台用户缓存管理Service
- * Created by Paris_Zhou on 2020/3/13.
+ * Created by Paris_Zhou on 2022/3/13.
  */
 public interface UmsAdminCacheService {
     /**

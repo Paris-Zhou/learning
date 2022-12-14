@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 管理员角色关系管理Service实现类
- * Created by Paris_Zhou on 2020/8/21.
+ * Created by Paris_Zhou on 2022/8/21.
  */
 @Service
 public class UmsAdminRoleRelationServiceImpl extends ServiceImpl<UmsAdminRoleRelationMapper, UmsAdminRoleRelation> implements UmsAdminRoleRelationService {

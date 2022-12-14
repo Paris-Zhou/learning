@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 /**
  * Swagger API文档相关配置
- * Created by Paris_Zhou on 2018/4/26.
+ * Created by Paris_Zhou on 2022/4/26.
  */
 @Configuration
 @EnableSwagger2

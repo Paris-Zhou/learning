@@ -13,7 +13,7 @@ import java.util.*;
 
 /**
  * 动态权限数据源，用于获取动态权限规则
- * Created by Paris_Zhou on 2020/2/7.
+ * Created by Paris_Zhou on 2022/2/7.
  */
 public class DynamicSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 

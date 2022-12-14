@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * 自定义返回结果：未登录或登录过期
- * Created by Paris_Zhou on 2018/5/14.
+ * Created by Paris_Zhou on 2022/5/14.
  */
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override

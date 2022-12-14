@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * 后台角色管理Service实现类
- * Created by Paris_Zhou on 2018/9/30.
+ * Created by Paris_Zhou on 2022/9/30.
  */
 @Service
 public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper,UmsRole>implements UmsRoleService {

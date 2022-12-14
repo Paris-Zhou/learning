@@ -5,7 +5,7 @@ import com.zhoupeng.common.api.IErrorCode;
 
 /**
  * 自定义API异常
- * Created by Paris_Zhou on 2020/2/27.
+ * Created by Paris_Zhou on 2022/2/27.
  */
 public class ApiException extends RuntimeException {
     private IErrorCode errorCode;

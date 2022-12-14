@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * 后台角色管理Service
- * Created by Paris_Zhou on 2018/9/30.
+ * Created by Paris_Zhou on 2022/9/30.
  */
 public interface UmsRoleService extends IService<UmsRole> {
     /**

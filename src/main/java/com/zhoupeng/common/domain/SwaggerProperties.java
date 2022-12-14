@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Swagger自定义配置
- * Created by Paris_Zhou on 2020/7/16.
+ * Created by Paris_Zhou on 2022/7/16.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

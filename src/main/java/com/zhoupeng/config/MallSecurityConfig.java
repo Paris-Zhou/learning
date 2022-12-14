@@ -4,13 +4,10 @@ import com.zhoupeng.modules.ums.model.UmsResource;
 import com.zhoupeng.modules.ums.service.UmsAdminService;
 import com.zhoupeng.modules.ums.service.UmsResourceService;
 import com.zhoupeng.security.component.DynamicSecurityService;
-import com.zhoupeng.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.ConfigAttribute;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
@@ -20,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * mall-security模块相关配置
  * 自定义配置，用于配置如何获取用户信息及动态权限
- * Created by Paris_Zhou on 2019/11/9.
+ * Created by Paris_Zhou on 2022/11/9.
  */
 @Configuration
 public class MallSecurityConfig {

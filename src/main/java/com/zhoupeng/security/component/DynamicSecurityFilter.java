@@ -2,13 +2,11 @@ package com.zhoupeng.security.component;
 
 import com.zhoupeng.security.config.IgnoreUrlsConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.web.FilterInvocation;
-import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
@@ -18,7 +16,7 @@ import java.io.IOException;
 
 /**
  * 动态权限过滤器，用于实现基于路径的动态权限过滤
- * Created by Paris_Zhou on 2020/2/7.
+ * Created by Paris_Zhou on 2022/2/7.
  */
 public class DynamicSecurityFilter extends AbstractSecurityInterceptor implements Filter {
 
